@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Make the image fully responsive */
+        /* 头部 */
+        body {
+            width: 1200px;
+            text-align: center;
+            margin: auto;
+        }
+
+        .container {
+            width: 1200px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #header {
+            display: flex;
+            align-items: center;
+            /* background-color: rgb(242, 242, 242); */
+            height: 60px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            margin-left: 5px;
+        }
+
+        .nav {
+            /* 不使用项目符号 */
+            list-style: none;
+        }
+
+        .nav li {
+            float: right;
+            margin-left: 5px;
+        }
+
+        .between {
+            justify-content: space-between;
+        }
+        p {
+            text-align: left;
+        }
+
+        /* 中间 */
+        .antman p{
+            opacity: 0.8;
+        }
+
+
+
+
+
+
+        /* 底部 */
+        .bottom{
+            /* background-color: #810014; */
+            width: 1200px;
+            height: 240px;
+            margin: auto;
+        }
+        .bottom div{
+            display: inline-block;
+            margin: -15px 50px;
+        }
+        .btone{
+            width: 40%;
+            height: 180px;
+            float: left;
+            margin-left: 5%;
+        }
+        .bttwo{
+            /* width: 20%;
+            height: 180px; */
+            float: right;
+            margin-right: 10%;
+        }
+        /* .bottom hr{
+            background-color: black;
+            z-index: 1;
+        } */
+        .btthree{
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            margin-bottom: 0px;
+        }
+        .bottom p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: rgb(242, 242, 242); padding: 0 20px;">
+        <div id='header'>
+            <div class='container logo between'>
+                <div class="logo">
+                    <img width="50px" src="./imgs/ironman.png" alt="">
+                    <span style="color: black;"> 复仇者联盟</span>
+                </div>
+                <ul class='nav'>
+                    <li><a style="color: black;" href="./maps.html">关于我们</a></li>
+                    <li><a style="color: black;" href="./business.html">新闻</a></li>
+                    <li><a style="color: black;" href="./index.html">简介</a> </li>
+                </ul>
+            </div>
+            
+        </div>
+        <div >
+            <p style="border-left:5px solid red;">《蚁人》再发新剧照漫威第二阶段收官之作7月17日北美上映</p>
+            <p style="opacity: 0.5;">2015-05-26 09:27:23 </p>
+        </div>
+    </div>
+    <div class="antman">
+        <img src="./imgs/img20.png" alt="">
+        <p>即将于7月17日在北美上映的《蚁人》曝光三张全新剧照，微缩版超级英雄蚁人以及斯科特.朗(保罗.路德饰)、科学家汉克皮姆(迈克尔道格拉斯饰)以及皮姆的女儿霍普范.戴恩(伊万
+            杰琳.莉莉饰)三位片中主要角色同时登场。
+        </p>
+        
+        <p> 这部全新的超级英雄电影拥有相对独立的故事，片中蚁人将与科学家汉克皮姆联手拯救世界。眼下上映了近-个月的《复仇者联盟2:奥创纪元》热度不断回落，而《蚁人》作为漫威第
+            二阶段的收官之作，被寄予厚望。此外,蚁人还会出现在漫威第三阶段的首部曲《美国队长3:内战》中，这位新成员如何融入英雄大集体也是值得期待的看点之一。
+        </p>
+    </div>
+
+
+
+
+    <!-- 底部 -->
+    <div id="dibu" style="width: 100%; background-color: #d7d7d7; padding-top: 4%;">
+        <div class="bottom">
+            <div>
+                <img src="./imgs/img10.png" alt="">
+                <p>拯救地球</p>
+            </div>
+            <div>
+                <img src="./imgs/img11.png" alt="">
+                <p>英雄合照</p>
+            </div>
+            <div>
+                <img src="./imgs/img12.png" alt="">
+                <p>寻找原石</p>
+            </div>
+            <span class="bttwo">
+                <img src="./imgs/img13.png" alt="">
+            </span>
+            <!-- <hr> -->
+            <div class="btthree">
+                <p>版权所有&copy;HXF&复仇者联盟</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,15 +1,358 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>企业站</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Make the image fully responsive */
+        /* 头部 */
+        body {
+            width: 1200px;
+            text-align: center;
+            margin: auto;
+        }
+
+        .container {
+            width: 1200px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #header {
+            display: flex;
+            align-items: center;
+            background-color: rgb(242, 242, 242);
+            height: 60px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            margin-left: 5px;
+        }
+
+        .nav {
+            /* 不使用项目符号 */
+            list-style: none;
+        }
+
+        .nav li {
+            float: right;
+            margin-left: 5px;
+        }
+
+        .between {
+            justify-content: space-between;
+        }
+
+
+
+        /* 滑动窗口  */
+        .carousel-inner img {
+            width: 1500px;
+            height: 400px;
+        }
+
+        .icon {
+            width: 100%;
+            background-color: rgb(242, 242, 242);
+        }
+
+        .icon div {
+            width: 80px;
+            display: inline-block;
+            margin: 0 100px;
+        }
+        .icon p{
+            text-align: center;
+        }
+        .text {
+            height: 510px;
+            width: 100%;
+            /* overflow: hidden; */
+        }
+
+        .textdisplay {
+            width: 49%;
+            height: 505px;
+            margin-top: 0;
+            display: inline-block;
+            /* overflow: hidden; */
+        }
+        .textdisplay img{
+            height: 500px;
+            width: 100%;
+        }
+        .textdisplay p{
+            margin: 0 20px;
+        }
+        p {
+            text-align: left;
+        }
+        .news{
+            display: flex;
+        }
+        .news div {
+            display: inline-block;
+            width: 24%;
+            height: 390px;
+            position: relative;
+            top: 0;
+            overflow: hidden;
+        }
+
+        .news h4 {
+            text-align: left;
+            margin: 0 20px;
+        }
+        .news p{
+            margin: 0 20px;
+        }
+
+
+        /* 底部 */
+        .bottom{
+            /* background-color: #810014; */
+            width: 1200px;
+            height: 240px;
+            margin: auto;
+        }
+        .bottom div{
+            display: inline-block;
+            margin: -15px 50px;
+        }
+        .btone{
+            width: 40%;
+            height: 180px;
+            float: left;
+            margin-left: 5%;
+        }
+        .bttwo{
+            /* width: 20%;
+            height: 180px; */
+            float: right;
+            margin-right: 10%;
+        }
+        /* .bottom hr{
+            background-color: black;
+            z-index: 1;
+        } */
+        .btthree{
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            margin-bottom: 0px;
+        }
+        .bottom p{
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>第一个网页</h1>
-    <a href="a.html">aaa</a>
-    <a href="b.html">bbb</a>
-    <a href="test.html">个人展示页</a>
+    <div id='header'>
+        <div class='container logo between'>
+            <div class="logo">
+                <img width="50px" src="./imgs/ironman.png" alt="">
+                <span style="color: black;"> 复仇者联盟</span>
+            </div>
+            <ul class='nav'>
+                <li><a style="color: black;" href="#jianjie">简介</a> </li>
+                <li><a style="color: black;" href="./business.html">新闻</a></li>
+                <li><a style="color: black;" href="./maps.html">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- 指示符 -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- 轮播图片 -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img height="auto" src="./imgs/avengers.jpeg">
+            </div>
+            <div class="carousel-item">
+                <img src="./imgs/avengers2.jpeg">
+            </div>
+            <div class="carousel-item">
+                <img src="./imgs/avengers3.jpeg">
+            </div>
+        </div>
+
+        <!-- 左右切换按钮 -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+
+    </div>
+    <h1>服务范围</h1>
+    <div class="icon">
+        <div>
+            <img src="./imgs/img2.png" alt="">
+            <p>拯救地球</p>
+        </div>
+        <div>
+            <img src="./imgs/img3.png" alt="">
+            <p>英雄合照</p>
+        </div>
+        <div>
+            <img src="./imgs/img4.png" alt="">
+            <p>寻找原石</p>
+        </div>
+        <div>
+            <img src="./imgs/img5.png" alt="">
+            <p>宇宙旅行</p>
+        </div>
+    </div>
+    <h1>团队介绍</h1>
+    <div id="jiaojie">
+        <div class="text">
+            <div class="textdisplay">
+                <img src="./imgs/img6.png" alt="">
+            </div>
+
+            <div class="textdisplay" style="margin-top: 0; height: 145px;">
+                <div>
+                    <h2>托尼.史塔克</h2>
+                    <p>身价亿万的大企业家托尼.斯塔克不小心身中埋伏，不仅被敌人囚禁，还被强迫为敌人制造武器。然而斯塔克却打造出了一身先进的装甲，并身着装甲成功逃脱。斯塔克的人生观从此发生改变，现在的他化身钢铁侠，用自己的财力和智慧致力于为人类建造一个更加安全、美好的世界。
+                    </p>
+                </div>
+
+                <div
+                    style=" margin-bottom: 0px; height: 200px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div></div>
+                    <div>
+                        <hr>
+                        <p>能&nbsp;&nbsp;&nbsp;&nbsp;力:托尼有着天才般的智商，能够发明各类复杂精密的设备，尤其擅长高尖端武器和装甲的研发。他也有着极强的商业头脑。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text">
+            <div class="textdisplay" style="margin-top: 0; height: 145px;">
+                <div>
+                    <h2>美国队长</h2>
+                    <p>年轻的史蒂夫.罗杰斯誓死效忠自己的祖国，在注射超级士兵血清后，变身成为一-夫当关、万夫莫开的美国队长，并为星条旗奋战超过六十余年，是自由和解放的代表人物。                        
+                    </p>
+                </div>
+
+                <div
+                    style=" margin-bottom: 0px; height: 200px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div></div>
+                    <div>
+                        <hr>
+                        <p>能&nbsp;&nbsp;&nbsp;&nbsp;力:美国队长精通美式拳击、柔道，并把自己独特的对战风格融进了这些格斗技能。他在其他格斗领域也展现出高超的技巧和丰富的知识。他对自己要求严格，每天都坚持运动，内容包括有氧健身、举重、体操、以及模拟对战，让自己永远保持在最佳状态。美国队长是地球.上最强大的人类格斗士之一
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="textdisplay">
+                <img src="./imgs/img7.png" alt="">
+            </div>
+        </div>
+        <div class="text">
+            <div class="textdisplay">
+                <img  src="./imgs/img8.png" alt="">
+            </div>
+            <div class="textdisplay" style="margin-top: 0; height: 145px;">
+                <div>
+                    <h2>黑寡妇</h2>
+                    <p>娜塔莎.罗曼诺娃，拥有诸多假名，是- -位间谍专家、运动能手、刺客。黑寡妇从小就在臭名昭著的红房学院(Red Room Academy)接受克格勃的训练，她曾经是复仇者联盟的敌人，逃离苏联的控制后，黑寡妇加入了复仇者联盟，并成为神盾局的一位高级特工。
+                    </p>
+                </div>
+
+                <div
+                    style=" margin-bottom: 0px; height: 200px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div></div>
+                    <div>
+                        <hr>
+                        <p>能&nbsp;&nbsp;&nbsp;&nbsp;力:政府治疗延缓了黑寡妇的衰老，也增强了她的免疫系统和身体耐力。      
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>新闻动态</h1>
+    <div class="news" id="news">
+        <div>
+            <img src="./imgs/img9.png" alt="">
+            <a href="./business.html"><h4>蜘蛛侠vs毒液联盟，奇迹般获得冠军</h4></a>
+            <hr>
+            <p>
+                Spider-Man Vs. Venom Aliance Quest Boss Battle - Marvel Contest of Champions蜘蛛侠vs毒液联盟任务boss大战奇迹冠军大赛..
+
+            </p>
+        </div>
+        <div>
+            <img src="./imgs/img14.png" alt="">
+            <a href="./business.html"><h4>漫威新家伙，英雄联盟混搭</h4></a>
+            <hr>
+            <p>
+                有人认识这位名字叫什么吗?欢迎留言..
+            </p>
+        </div>
+        <div>
+            <img src="./imgs/img16.png" alt="">
+            <a href="./business.html"><h4>快来快来，这里有漫威的钢铁侠小视频</h4></a>
+            <hr>
+            <p>钢铁侠和蝙蝠侠谁厉害?高手过招，不讲体术，要讲境界。比较老爷托尼孰强孰弱，沉溺于装备竞赛，反而落了下乘。比境界，老爷强
+            </p>
+        </div>
+        <div>
+            <img src="./imgs/img15.png" alt="">
+            <a href="./business.html"><h4>你们说汪东城会不会也喜欢漫威电影?</h4></a>
+            <hr>
+            <p>漫威粉丝们，漫威网前段时间停更了，表示歉意，这个月坚持完毕，接下来可以直接在微信小程序上面搜索(折腾娱乐) 就可以重新回
+                </p>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div id="dibu" style="width: 100%; background-color: #d7d7d7; padding-top: 4%;">
+        <div class="bottom">
+            <div>
+                <img src="./imgs/img10.png" alt="">
+                <p>拯救地球</p>
+            </div>
+            <div>
+                <img src="./imgs/img11.png" alt="">
+                <p>英雄合照</p>
+            </div>
+            <div>
+                <img src="./imgs/img12.png" alt="">
+                <p>寻找原石</p>
+            </div>
+            <span class="bttwo">
+                <img src="./imgs/img13.png" alt="">
+            </span>
+            <!-- <hr> -->
+            <div class="btthree">
+                <p>版权所有&copy;HXF&复仇者联盟</p>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>
