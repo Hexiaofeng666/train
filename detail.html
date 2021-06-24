@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap 实例 - 默认的分页</title>
+    <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            width: 1200px;
+            text-align: center;
+            margin: auto;
+        }
+
+        .container {
+            width: 1200px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #header {
+            display: flex;
+            align-items: center;
+            background-color: rgb(242, 242, 242);
+            height: 60px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            margin-left: 5px;
+        }
+
+        .nav {
+            /* 不使用项目符号 */
+            list-style: none;
+        }
+
+        .nav li {
+            float: right;
+            margin-left: 5px;
+        }
+
+        .between {
+            justify-content: space-between;
+        }
+        /* 头部 */
+
+
+
+
+
+        /* 底部 */
+        .bottom{
+            /* background-color: #810014; */
+            width: 1200px;
+            height: 240px;
+            margin: auto;
+        }
+        .bottom div{
+            display: inline-block;
+            margin: -15px 50px;
+        }
+        .btone{
+            width: 40%;
+            height: 180px;
+            float: left;
+            margin-left: 5%;
+        }
+        .bttwo{
+            /* width: 20%;
+            height: 180px; */
+            float: right;
+            margin-right: 10%;
+        }
+        /* .bottom hr{
+            background-color: black;
+            z-index: 1;
+        } */
+        .btthree{
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            margin-bottom: 0px;
+        }
+        .bottom p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id='header'>
+        <div class='container logo between'>
+            <div class="logo">
+                <img width="50px" src="./imgs/ironman.png" alt="">
+                <span style="color: black;"> 复仇者联盟</span>
+            </div>
+            <ul class='nav'>
+                
+                <li><a style="color: black;" href="./index.html">简介</a> </li>
+                <li><a style="color: black;" href="./business.html">新闻</a></li>
+                <li><a style="color: black;" href="./maps.html">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 头部止 -->
+    <div id='newsdetail' class="container">
+    </div>
+   <!-- 底部 -->
+   <div id="dibu" style="width: 100%; background-color: #d7d7d7; padding-top: 4%;">
+    <div class="bottom">
+        <div>
+            <img src="./imgs/img10.png" alt="">
+            <p>拯救地球</p>
+        </div>
+        <div>
+            <img src="./imgs/img11.png" alt="">
+            <p>英雄合照</p>
+        </div>
+        <div>
+            <img src="./imgs/img12.png" alt="">
+            <p>寻找原石</p>
+        </div>
+        <span class="bttwo">
+            <img src="./imgs/img13.png" alt="">
+        </span>
+        <!-- <hr> -->
+        <div class="btthree">
+            <p>版权所有&copy;复仇者联盟</p>
+        </div>
+    </div>
+</div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        
+        // alert(widow.location.search.split('=')[1]);
+        var i = window.location.search.split('=')[1];
+        // console.log(i);
+        axios.get(`https://www.fastmock.site/mock/dd4ae108d89a4f155b0102b541ef012b/Users/hhh`).then(function(res){
+            console.log(res.data.data.list);
+            let obj ={}
+            for (let index = 0; index < res.data.data.list.length; index++) {
+                const element = res.data.data.list[index];
+               if(element.id===i) {
+                obj=element
+                console.log(obj);
+            // let tilte = $(`<h1>${res.data.date.list[i].name}</h1>`);
+            var newsdetail = $('#newsdetail');
+            // let title = $(`<h3>${res.data.data[i-1].title}</h3>`);
+
+
+            newsdetail.append(`<h3>${res.data.data.list[index].title}</h3>`);
+            newsdetail.append(`<p style="color:darkgrey; font-size: 15px; margin: auto;">${res.data.data.list[index].title}</p>`);
+            newsdetail.append(`<img width='800px' height='500px' src="${res.data.data.list[index].img}" alt="">`);
+            newsdetail.append(`<p style="font-size: 13px;">${res.data.data.list[index].time}</p>`);
+            newsdetail.append(`<p style="font-size: 13px;">${res.data.data.list[index].synopsis}</p>`);
+               }
+            }
+        })
+    </script>
+</body>
+</html>
