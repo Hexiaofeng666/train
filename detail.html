@@ -12,6 +12,11 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/lazysizes/5.3.2/lazysizes-umd.js"></script>
     <title>Document</title>
+    <!-- <script></script> -->
+    <!-- 联系我们 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -20,7 +25,7 @@
             <div class="navbar-box container">
                 <div class="logo">
                     <img id="img1" src="./imgs/ironman.png">
-                    <span>复仇者联盟</span>
+                    <span style="color: black;">复仇者联盟</span>
                 </div>
                 <div id='menus' class="menu">菜单</div>
 
@@ -41,23 +46,53 @@
         <div class="container content">
             <div id="liao" class="row1 row">
                 <div id="footer-img" class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="width: 200px; height: 250px;">
-                    <img data-src="home.png" class="lazyload" alt="" style="width: 200px; height: 200px;">
+                    <img data-src="./imgs/img10.png" class="lazyload" alt="" style="width: 200px; height: 200px;">
                     <p style="font-size: 20px;">福州市闽江学院</p>
                 </div>
                 <div id="footer-img" class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="width: 200px; height: 250px; ">
-                    <img data-src="youxiang.png" class="lazyload" alt="" style="width: 200px; height: 200px;">
+                    <img data-src="./imgs/img11.png" class="lazyload" alt="" style="width: 200px; height: 200px;">
                     <p style="font-size: 20px;">1252533955@qq.com</p>
                 </div>
                 <div id="footer-img" class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="width: 200px; height: 250px;">
-                    <img data-src="tel-fill.png" class="lazyload" alt="" style="width: 200px; height: 200px;">
-                    <p style="font-size: 20px;">100-8666-6666</p>
+                    <img data-src="./imgs/img12.png" class="lazyload" alt="" style="width: 200px; height: 200px;">
+                    <p style="font-size: 20px;">100-8666-1111</p>
                 </div>
-                <div id="footer-img" class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="width: 200px; height: 250px;">
-                    <img data-src="./imgs/img13.png" class="lazyload" alt="" style="width: 200px; height: 200px;">
+                <div id="footerImg" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 img-responsive"
+                    style="width: 200px; height: 250px;">
+                    <img data-src="./imgs/img13.png" alt="" style="width: 200px; height: 200px;" class="lazyload">
                     <p style="font-size: 20px;">扫一扫，了解我们</p>
                 </div>
             </div>
             <div class="b">版权所有©极客大叔</div>
+            <!-- 联系我们 -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true" style="color: black;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">联系我们</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">我的通讯地址:</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">你想对我说的话:</label>
+                                    <textarea type="password" class="form-control"
+                                        id="exampleInputPassword1"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                            <button id='submit' type="button" class="btn btn-primary">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script>
@@ -89,6 +124,44 @@
             })
         })
     </script>
+    <!-- 联系我们 -->
+<script>
+    $(function () {
+        $('#lists').removeClass('list-mobile')
+        $('#menus').click(function () {
+            if ($('#lists').hasClass('list-mobile')) {
+                $('#lists').removeClass('list-mobile')
+            } else {
+                $('#lists').addClass('list-mobile')
+            }
+        })
+    })
+    var myModal = new bootstrap.Modal(document.getElementById('exampleModal'))
+
+    $('#footerImg').click(function () {
+        console.log("fff")
+        myModal.show()
+    })
+    $("#submit").click(function () {
+        let email = $('#exampleInputEmail1').val()
+        let message = $('#exampleInputPassword1').val()
+        console.log("email", email, message)
+        axios({
+            url: 'https://anxhpmw8.lc-cn-n1-shared.com/1.1/classes/data',
+            method: 'post',
+            headers: {
+                'X-LC-Id': 'ANXHpmW8OqNdyMJFzXeYiBnU-gzGzoHsz',
+                'X-LC-Key': 'uXeb0P7atQceCfDm8Csb7Jtq'
+            },
+            data: {
+                email: email,
+                message: message
+            }
+        })
+        myModal.hide()
+    })
+
+</script>
 </body>
 
 </html>
