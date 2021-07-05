@@ -20,6 +20,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+        <style>
+            .list li{
+                margin: auto;
+            }
+        </style>
 
     <title>Document</title>
     <style>
@@ -204,36 +209,26 @@
             axios.get(`https://www.fastmock.site/mock/dd4ae108d89a4f155b0102b541ef012b/Users/xinwen?page=${page}`).then(function(res) {
                 console.log(res.data);
 
-                for (let i = 0; i < 6; i++) {
-                    let li = $("<li class='col-lg-6 col-md-6 col-sm-12 col-xs-12 img-responsive'></li>");
-                    li.append(`<img class='img-responsive' width='300px' height='300px' src="${res.data.data.list[i].img}" alt="">`);
-                    li.append(`<p style="font-weight: bold; font-size:20px">${res.data.data.list[i].title}</p>`);
-                    li.append(`<p style="color:darkgrey; font-size: 10px; margin: auto;">${res.data.data.list[i].time}</p>`);
-                    li.append(`<p style="font-size: 13px;">${res.data.data.list[i].content}</p>`);
-                    li.attr('id', res.data.data.list[i].id)
-                    $(".list11").append(li);
+                for (let i = 0; i < 8; i++) {
+                let li = $("<li class='col-lg-3 col-md-4 col-sm-6 col-xs-12 img-responsive'></li>");
+                // li.append(`<img class="lazyload" width='300px' height='300px' style=" padding:20px;" class="lazyload" data-src="${res.data.data.list[i].img}" alt="">`);
+                li.append(`<img class='img-responsive lazyload' width='300px' height='300px' data-src="${res.data.data.list[i].img}" alt="">`);
+                li.append(`<p style="font-weight: bold; font-size: 20px;">${res.data.data.list[i].title}</p>`);
+                li.append(`<p style="color:red; font-size: 10px; margin: auto;">${res.data.data.list[i].time}</p>`);
+                li.append(`<p style="font-size: 12px;">${res.data.data.list[i].content}</p>`);
+                li.attr('id', res.data.data.list[i].id)
+                $(".t1").append(li);
 
-                    $('.list11 li').click(function() {
-                        window.location.href = `detail.html?id=${$(this).attr('id')}`
-                    })
-                }
+                $('.t1 li').click(function () {
+                    window.location.href = `detail.html?id=${$(this).attr('id')}`
+                })
+            }
 
 
             })
         }
     </script>
-    <script>
-        $(function() {
-            $('#lists').removeClass('list-mobile')
-            $('#menus').click(function() {
-                if ($('#lists').hasClass('list-mobile')) {
-                    $('#lists').removeClass('list-mobile')
-                } else {
-                    $('#lists').addClass('list-mobile')
-                }
-            })
-        })
-    </script>
+   
     <!-- 联系我们 -->
 <script>
     $(function () {

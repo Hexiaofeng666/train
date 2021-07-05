@@ -235,3 +235,9 @@ a {
     color: black;
     text-decoration: none;
 }
+/* @media (min-width: 992px){
+.col-lg-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+} */
