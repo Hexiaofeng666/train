@@ -204,7 +204,7 @@
             axios.get(`https://www.fastmock.site/mock/dd4ae108d89a4f155b0102b541ef012b/Users/xinwen?page=${page}`).then(function(res) {
                 console.log(res.data);
 
-                for (let i = 0; i < 8; i++) {
+                for (let i = 0; i < 6; i++) {
                     let li = $("<li class='col-lg-6 col-md-6 col-sm-12 col-xs-12 img-responsive'></li>");
                     li.append(`<img class='img-responsive' width='300px' height='300px' src="${res.data.data.list[i].img}" alt="">`);
                     li.append(`<p style="font-weight: bold; font-size:20px">${res.data.data.list[i].title}</p>`);
